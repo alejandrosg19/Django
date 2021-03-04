@@ -1,0 +1,46 @@
+<html>
+
+<body>
+
+    <!--Incrustando una platilla dentro de otra plantilla barra dentro de plantillaSaludo-->
+    {% include "header/barra.html" %}
+
+    <h1>Bienvenido a mi primer plantilla</h1>
+
+    {% if persona.nombre == "Santiago" %}
+    <p>Ha ingresado el administrador</p>
+
+    {% else %}
+    <p>No ha ingresado el adminsurador</p>
+    {% endif %}
+
+    <!--La jerarquia del punto en Django es key diccionario, atributo, metodo y indice de lista-->
+    <!--nombre_persona.upper es un metodo string que lo convierte en mayuscula-->
+    <p>El nombre es: {{nombre_persona.upper}} {{apellido_persona}}</p>
+    <p>Con objetos, el nombre es: {{persona.nombre}} {{persona.apellido}}</p>
+    <p>La fecha actual es: {{fecha.day}}/{{fecha.month}}/{{fecha.year}}</p>
+
+    <br>
+    <h3>Datos Persona</h3>
+    <p>{{datos_persona}}</p>
+    <p>Dato de la posicion 3 de la lista: {{datos_persona.3}}</p>
+
+    <br>
+    <h3>Datos Persona con Ciclo</h3>
+
+    <!--Evalua si datos_persona existe y si tiene datos, de ser asi entra en el if-->
+    {% if datos_persona2 %}
+    <p>
+        <ul>
+            {% for dato in datos_persona2 %}
+            <li>{{dato}}</li>
+            {% endfor%}
+        </ul>
+    </p>
+    {% else %}
+    <p>La lista 2 no posee datos de la persona</p>
+    {% endif %}
+
+</body>
+
+</html>

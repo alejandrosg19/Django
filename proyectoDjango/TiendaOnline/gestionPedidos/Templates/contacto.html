@@ -1,0 +1,18 @@
+<html>
+
+<head>
+    <title>Formulario de Contacto</title>
+</head>
+
+<body>
+    <h1>Contactanos </h1>
+    <!--{% csrf_token es una protección contra %}-->
+    <form action="/contacto/" method="POST"> {% csrf_token %}
+        <p>Asunto: <input type="text" name="asunto"></p>
+        <p>Email: <input type="text" name="email"></p>
+        <p>Mensaje: <textarea name="mensaje" rows="15" columns="45"></textarea></p>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+
+</html>

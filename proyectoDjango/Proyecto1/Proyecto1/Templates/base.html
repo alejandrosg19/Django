@@ -1,0 +1,32 @@
+<!--Plantilla padre que contendra los elementos comunes que tambien deberan tener las demas plantillas
+de esta manera no hay que vovler a codificar elementos comunes que tienen las plantillas-->
+<html>
+
+<head>
+
+    <!--Como el titulo en las diferentes paginas puede cambiar, pues creamos un bloque en el titulo
+    el cual podra ser cambiado en las diferentes plantillas hijas. Todo lo que se encuentre dentro 
+    de las etiquetas {% block cualquiernombrequequeramos %} cualquier cosa que vaya aca puede cambiar aunque 
+    haya herencia en plantillas de esta plantilla padre o base{% endblock%}-->
+    <title>
+        {% block title%} {% endblock %}
+    </title>
+</head>
+
+<body>
+
+    <h1 style="background-color: darkolivegreen; color: white; text-align: center;">Santiago Alejandro Gonzalez Piracón</h1>
+
+    <!--Incluimos html barra-->
+    {% include "header/barra.html" %}
+
+
+    <h3>Cursos de programació, ofimatica y diseño web</h3>
+
+    {% block content %} {% endblock %}
+
+    <p style="background-color: darkolivegreen; color: white; text-align: right;">Gracias por visitar mi pagina</p>
+
+</body>
+
+</html>
